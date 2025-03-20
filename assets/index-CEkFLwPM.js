@@ -85,7 +85,7 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: `Bearer ${void 0}`
+    Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYmY3ZTYzMjRlMTYyMzNlMTY2ZDg5MGQ4YmJmYWUyYSIsIm5iZiI6MTY3OTkyMDIwNC42OTIsInN1YiI6IjY0MjE4YzRjNmEzNDQ4MDExMmJhMThjYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.40ExqRMdfCdB6U1T8pL-8WkLX-Xkor7yb__Gjs3zuz0"}`
   }
 };
 class MovieService {
@@ -93,7 +93,7 @@ class MovieService {
     __publicField(this, "currentPage");
     __publicField(this, "baseUrl");
     this.currentPage = 1;
-    this.baseUrl = void 0;
+    this.baseUrl = "https://api.themoviedb.org/3";
   }
   async getPopularMovies() {
     const response = await fetch(
