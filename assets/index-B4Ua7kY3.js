@@ -42,7 +42,7 @@ function Footer() {
   const $footer = document.createElement("footer");
   $footer.classList.add("footer");
   $footer.innerHTML = `<p>&copy; 우아한테크코스 All Rights Reserved.</p>
-    <p><img src="./woowacourse_logo.png" width="180" /></p>`;
+    <p><img src="images/woowacourse_logo.png" width="180" /></p>`;
   return $footer;
 }
 function LogoSearchBar() {
@@ -50,12 +50,12 @@ function LogoSearchBar() {
   container.classList.add("logo-searchBar");
   container.innerHTML = `
     <h1 class="logo">
-      <img src="./logo.png" alt="MovieList" />
+      <img src="images/logo.png" alt="MovieList" />
     </h1>
     <div class="search-container">
       <input placeholder="검색어를 입력하세요." class="search-input"/> 
       <button class="search-button">
-        <img src="./search.svg" alt="검색"/>
+        <img src="images/search.svg" alt="검색"/>
       </button> 
     </div>
   `;
@@ -71,7 +71,7 @@ function Header({ title, poster_path, vote_average }) {
       ${LogoSearchBar().outerHTML}
       <div class="top-rated-movie">
         <div class="rate">
-          <img src="./star_empty.png" class="star" />
+          <img src="images/star_empty.png" class="star" />
           <span class="rate-value">${vote_average.toFixed(1)}</span>
         </div>
         <div class="title">${title}</div>
@@ -87,7 +87,7 @@ function MovieCaption({ title, vote_average }) {
   $movieCaption.classList.add("item-desc");
   $movieCaption.innerHTML = ` 
   <p class="rate">
-    <img src="./star_empty.png" class="star" />
+    <img src="images/star_empty.png" class="star" />
     <span>${vote_average.toFixed(1)}</span>
   </p>
   <strong>${title}</strong>
@@ -180,7 +180,7 @@ function MovieDetailModal({ title, poster_path, release_date, vote_average, genr
   const $button = Button("", "close-modal");
   $modalBackground.className = "modal-background active";
   $modal.classList.add("modal");
-  $button.innerHTML = `<img src="../../public/modal_button_close.png" />`;
+  $button.innerHTML = `<img src="images/modal_button_close.png" />`;
   $button.id = "closeModal";
   const releaseYear = release_date.split("-")[0];
   const genresString = genres.map((genre) => genre.name).join(", ");
@@ -196,7 +196,7 @@ function MovieDetailModal({ title, poster_path, release_date, vote_average, genr
         <div class="average-container">
           <p>평균</p>
           <div class="rate average">
-            <img src="../../public/star_filled.png" class="star" />
+            <img src="images/star_filled.png" class="star" />
             <span>${vote_average.toFixed(1)}</span>
           </div>
         </div>
@@ -205,7 +205,7 @@ function MovieDetailModal({ title, poster_path, release_date, vote_average, genr
           <p class="point-text">내 별점</p>
           <div class="star-rating">
             <div class="star-wrap">
-              ${'<img src="../../public/star_empty.png" class="star point" />'.repeat(
+              ${'<img src="images/star_empty.png" class="star point" />'.repeat(
     5
   )}
             </div>
@@ -314,9 +314,9 @@ function updateStarImages($modal, movieId, rating = 0) {
   starElements.forEach((star, idx) => {
     const starRating = (idx + 1) * 2;
     if (starRating <= rating) {
-      star.src = "../../public/star_filled.png";
+      star.src = "images/star_filled.png";
     } else {
-      star.src = "../../public/star_empty.png";
+      star.src = "images/star_empty.png";
     }
   });
 }
